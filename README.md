@@ -9,6 +9,7 @@
 ![Nfts](src/assets/img/dashboards/nfts.png)
 
 2. **Secure Ownership and Provenance**: Every artwork sold on Artify is represented as an NFT, ensuring that ownership and authenticity are clearly established. 📜 These NFTs are stored on the Ethereum blockchain, which provides a secure, immutable record of the artwork’s provenance. 🛡️ This system significantly reduces the risk of piracy, unauthorized distribution, and disputes over ownership. 🔒
+![Nfts](src/assets/img/dashboards/mynfts.png)
 
 3. **Low Transaction Costs**: Artify leverages the Polygon network to facilitate transactions. 🪙 Polygon’s layer-2 solution offers significantly lower fees compared to traditional blockchain networks. 💸 This makes it more affordable for artists to mint and sell their work and for buyers to purchase art, particularly benefiting smaller transactions. 🏷️
 
