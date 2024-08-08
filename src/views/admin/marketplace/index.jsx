@@ -1,26 +1,4 @@
-/*!
-  _   _  ___  ____  ___ ________  _   _   _   _ ___   
- | | | |/ _ \|  _ \|_ _|__  / _ \| \ | | | | | |_ _| 
- | |_| | | | | |_) || |  / / | | |  \| | | | | || | 
- |  _  | |_| |  _ < | | / /| |_| | |\  | | |_| || |
- |_| |_|\___/|_| \_\___/____\___/|_| \_|  \___/|___|
-                                                                                                                                                                                                                                                                                                                                       
-=========================================================
-* Horizon UI - v1.1.0
-=========================================================
-
-* Product Page: https://www.horizon-ui.com/
-* Copyright 2023 Horizon UI (https://www.horizon-ui.com/)
-
-* Designed and Coded by Simmmple
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
-
-import React from "react";
+import React, { useState } from "react";
 
 // Chakra imports
 import {
@@ -32,6 +10,7 @@ import {
   Text,
   useColorModeValue,
   SimpleGrid,
+  Select
 } from "@chakra-ui/react";
 
 // Custom components
@@ -42,12 +21,14 @@ import NFT from "components/card/NFT";
 import Card from "components/card/Card.js";
 
 // Assets
-import Nft1 from "assets/img/nfts/Nft1.png";
-import Nft2 from "assets/img/nfts/Nft2.png";
-import Nft3 from "assets/img/nfts/Nft3.png";
-import Nft4 from "assets/img/nfts/Nft4.png";
-import Nft5 from "assets/img/nfts/Nft5.png";
-import Nft6 from "assets/img/nfts/Nft6.png";
+import musicnft1 from 'assets/img/nfts/musicnft1.png';
+import musicnft2 from 'assets/img/nfts/musicnft2.png';
+import musicnft3 from 'assets/img/nfts/musicnft3.png';
+import artnft1 from 'assets/img/nfts/artnft1.png';
+import artnft2 from 'assets/img/nfts/artnft2.png';
+import artnft3 from 'assets/img/nfts/artnft3.png';
+import artnft4 from 'assets/img/nfts/artnft4.png';
+
 import Avatar1 from "assets/img/avatars/avatar1.png";
 import Avatar2 from "assets/img/avatars/avatar2.png";
 import Avatar3 from "assets/img/avatars/avatar3.png";
@@ -55,10 +36,20 @@ import Avatar4 from "assets/img/avatars/avatar4.png";
 import tableDataTopCreators from "views/admin/marketplace/variables/tableDataTopCreators.json";
 import { tableColumnsTopCreators } from "views/admin/marketplace/variables/tableColumnsTopCreators";
 
+const currencyOptions = [
+  { value: 'ETH', label: 'ETH' },
+  { value: 'BTC', label: 'BTC' },
+  { value: 'ADA', label: 'ADA' },
+  { value: 'SOL', label: 'SOL' }
+];
+
 export default function Marketplace() {
   // Chakra Color Mode
   const textColor = useColorModeValue("secondaryGray.900", "white");
   const textColorBrand = useColorModeValue("brand.500", "white");
+
+  const [selectedCurrency, setSelectedCurrency] = useState('ETH');
+
   return (
     <Box pt={{ base: "180px", md: "80px", xl: "80px" }}>
       {/* Main Fields */}
@@ -112,10 +103,24 @@ export default function Marketplace() {
                 </Link>
               </Flex>
             </Flex>
+            <Flex mb='20px' justifyContent='flex-end'>
+              <Select
+                placeholder='Select currency'
+                value={selectedCurrency}
+                onChange={(e) => setSelectedCurrency(e.target.value)}
+                width='200px'
+              >
+                {currencyOptions.map(option => (
+                  <option key={option.value} value={option.value}>
+                    {option.label}
+                  </option>
+                ))}
+              </Select>
+            </Flex>
             <SimpleGrid columns={{ base: 1, md: 3 }} gap='20px'>
               <NFT
-                name='Abstract Colors'
-                author='By Esthera Jackson'
+                name='Echoes of the Past'
+                author='By Sofia Martinez'
                 bidders={[
                   Avatar1,
                   Avatar2,
@@ -126,13 +131,13 @@ export default function Marketplace() {
                   Avatar1,
                   Avatar1,
                 ]}
-                image={Nft1}
-                currentbid='0.91 ETH'
+                image={musicnft1}
+                currentbid={`${selectedCurrency} 0.91`}
                 download='#'
               />
               <NFT
-                name='ETH AI Brain'
-                author='By Nick Wilson'
+                name='Symphony of Dreams'
+                author='By Liam Thompson'
                 bidders={[
                   Avatar1,
                   Avatar2,
@@ -143,13 +148,13 @@ export default function Marketplace() {
                   Avatar1,
                   Avatar1,
                 ]}
-                image={Nft2}
-                currentbid='0.91 ETH'
+                image={musicnft2}
+                currentbid={`${selectedCurrency} 0.91`}
                 download='#'
               />
               <NFT
-                name='Mesh Gradients '
-                author='By Will Smith'
+                name='Harmonic Waves'
+                author='By Ava Johnson'
                 bidders={[
                   Avatar1,
                   Avatar2,
@@ -160,8 +165,8 @@ export default function Marketplace() {
                   Avatar1,
                   Avatar1,
                 ]}
-                image={Nft3}
-                currentbid='0.91 ETH'
+                image={musicnft3}
+                currentbid={`${selectedCurrency} 0.91`}
                 download='#'
               />
             </SimpleGrid>
@@ -179,8 +184,8 @@ export default function Marketplace() {
               gap='20px'
               mb={{ base: "20px", xl: "0px" }}>
               <NFT
-                name='Swipe Circles'
-                author='By Peter Will'
+                name='Abstract Reflections'
+                author='By Emily Clark'
                 bidders={[
                   Avatar1,
                   Avatar2,
@@ -191,13 +196,13 @@ export default function Marketplace() {
                   Avatar1,
                   Avatar1,
                 ]}
-                image={Nft4}
-                currentbid='0.91 ETH'
+                image={artnft1}
+                currentbid={`${selectedCurrency} 0.91`}
                 download='#'
               />
               <NFT
-                name='Colorful Heaven'
-                author='By Mark Benjamin'
+                name='Vivid Impressions'
+                author='By Noah Adams'
                 bidders={[
                   Avatar1,
                   Avatar2,
@@ -208,13 +213,13 @@ export default function Marketplace() {
                   Avatar1,
                   Avatar1,
                 ]}
-                image={Nft5}
-                currentbid='0.91 ETH'
+                image={artnft2}
+                currentbid={`${selectedCurrency} 0.91`}
                 download='#'
               />
               <NFT
-                name='3D Cubes Art'
-                author='By Manny Gates'
+                name='Cosmic Expressions'
+                author='By Mia Roberts'
                 bidders={[
                   Avatar1,
                   Avatar2,
@@ -225,8 +230,8 @@ export default function Marketplace() {
                   Avatar1,
                   Avatar1,
                 ]}
-                image={Nft6}
-                currentbid='0.91 ETH'
+                image={artnft3}
+                currentbid={`${selectedCurrency} 0.91`}
                 download='#'
               />
             </SimpleGrid>
@@ -255,46 +260,46 @@ export default function Marketplace() {
             </Flex>
 
             <HistoryItem
-              name='Colorful Heaven'
-              author='By Mark Benjamin'
+              name='Symphony of Dreams'
+              author='By Liam Thompson'
               date='30s ago'
-              image={Nft5}
-              price='0.91 ETH'
+              image={musicnft2}
+              price={`${selectedCurrency} 0.91`}
             />
             <HistoryItem
-              name='Abstract Colors'
-              author='By Esthera Jackson'
+              name='Echoes of the Past'
+              author='By Sofia Martinez'
               date='58s ago'
-              image={Nft1}
-              price='0.91 ETH'
+              image={musicnft1}
+              price={`${selectedCurrency} 0.91`}
             />
             <HistoryItem
-              name='ETH AI Brain'
-              author='By Nick Wilson'
+              name='Harmonic Waves'
+              author='By Ava Johnson'
               date='1m ago'
-              image={Nft2}
-              price='0.91 ETH'
+              image={musicnft3}
+              price={`${selectedCurrency} 0.91`}
             />
             <HistoryItem
-              name='Swipe Circles'
-              author='By Peter Will'
+              name='Abstract Reflections'
+              author='By Emily Clark'
               date='1m ago'
-              image={Nft4}
-              price='0.91 ETH'
+              image={artnft1}
+              price={`${selectedCurrency} 0.91`}
             />
             <HistoryItem
-              name='Mesh Gradients '
-              author='By Will Smith'
+              name='Vivid Impressions'
+              author='By Noah Adams'
               date='2m ago'
-              image={Nft3}
-              price='0.91 ETH'
+              image={artnft2}
+              price={`${selectedCurrency} 0.91`}
             />
             <HistoryItem
-              name='3D Cubes Art'
-              author='By Manny Gates'
+              name='Cosmic Expressions'
+              author='By Mia Roberts'
               date='3m ago'
-              image={Nft6}
-              price='0.91 ETH'
+              image={artnft3}
+              price={`${selectedCurrency} 0.91`}
             />
           </Card>
         </Flex>

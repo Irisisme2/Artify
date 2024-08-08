@@ -6,6 +6,7 @@
 ![Dashboard](src/assets/img/dashboards/artify.png)
 
 1. **Decentralized Control and Distribution**: Artify utilizes blockchain technology to empower artists with full control over their creations. 🛠️ Artists can mint their artworks as Non-Fungible Tokens (NFTs) and sell them directly to buyers without intermediaries. 🌐 This eliminates the need for traditional galleries and platforms, allowing artists to keep the majority of their earnings and reach their audience directly. 🎨
+![Nfts](src/assets/img/dashboards/nfts.png)
 
 2. **Secure Ownership and Provenance**: Every artwork sold on Artify is represented as an NFT, ensuring that ownership and authenticity are clearly established. 📜 These NFTs are stored on the Ethereum blockchain, which provides a secure, immutable record of the artwork’s provenance. 🛡️ This system significantly reduces the risk of piracy, unauthorized distribution, and disputes over ownership. 🔒
 

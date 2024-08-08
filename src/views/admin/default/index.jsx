@@ -44,9 +44,6 @@ import {
   MdBarChart,
 } from "react-icons/md";
 import RecentActivity from "views/admin/default/components/RecentActivity";
-import ComplexTable from "views/admin/default/components/ComplexTable";
-import DailyTraffic from "views/admin/default/components/DailyTraffic";
-import PieCard from "views/admin/default/components/PieCard";
 import EngagementMetrics from "views/admin/default/components/EngagementMetrics";
 import PortfolioOverview from "views/admin/default/components/PortfolioOverview";
 import SalesTrends from "views/admin/default/components/SalesTrends";
