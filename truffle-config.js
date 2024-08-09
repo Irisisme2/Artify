@@ -1,8 +1,8 @@
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const Web3 = require('web3');
-const infuraKey = "8ef77dd64b3440b880d0572df5857bc4";
-const mnemonic = "various plate lecture ocean odor hat load require episode lens struggle defy";
 
+const mnemonic = process.env.MNEMONIC;
+const infuraKey = process.env.INFURA_KEY;
 module.exports = {
   networks: {
     polygon: {
